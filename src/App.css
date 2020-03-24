@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  /* min-height: 80vh; */
+  width: 100vw;
+  padding-top: 32px;
+  text-align: center;
+}
+
+.main-container > h1 {
+  align-self: center;
+  font-size: 32px;
+  letter-spacing: 12px;
+}
+
+.page-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-container > h3 {
+  align-self: center;
+  margin-top: 20px;
+  letter-spacing: 12px;
+}
+
+.hero {
+  flex: 1;
+  height: 100%;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero img,
+.hero video {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  object-fit: cover;
+}
+
+.hero img {
+  max-height: 100%;
+  height: 100%;
+  max-width: 95%;
+  object-fit: cover;
+  z-index: 1;
+  background-size: cover;
+  mix-blend-mode: lighten;
+  animation: reveal-image 2s ease forwards,
+    swing 12s ease-in-out infinite alternate-reverse;
+}
+
+.hero video {
+  opacity: 0;
+  animation: reveal-video 3s ease 1s forwards,
+    swing 12s ease-in-out infinite alternate-reverse;
+}
+
+.zen-logo {
+  position: absolute;
+  width: 100px;
+  right: 20px;
+  bottom: 0px;
+}
+
+@keyframes reveal-image {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-video {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes swing {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(3deg);
+  }
+}
